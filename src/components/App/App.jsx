@@ -3,14 +3,10 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer.jsx';
-import '../Footer/Footer.css'
+import Cart from '../Cart/Cart';
 import SelectPizza from '../SelectPizza/SelectPizza';
 // import CustomerForm from '../CustomerForm/CustomerForm';
 import Checkout from '../Checkout/Checkout';
-
-
 
 function App() {
 
@@ -30,8 +26,6 @@ function App() {
           <Route exact path='/checkout'><Checkout/></Route>
         </Router>
       <br></br>
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
       <Footer />
     </div>
   );
