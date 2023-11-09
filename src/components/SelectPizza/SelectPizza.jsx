@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import PizzaItem from '../PizzaItem/PizzaItem';
 
 const SelectPizza = () => {
 
@@ -23,7 +24,10 @@ useEffect(() => {
 
     return (
         <div>
-            {JSON.stringify(pizzaList)}
+            
+            {pizzaList.map((pizza) => {
+                return <PizzaItem key={pizza.id} pizza={pizza}/>
+            })}
         </div>
     )
 }
