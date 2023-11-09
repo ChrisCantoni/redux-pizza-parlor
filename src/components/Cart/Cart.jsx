@@ -1,11 +1,13 @@
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import Button from '@mui/material/Button';
+import { useSelector } from 'react-redux';
 
 const Cart = () => {
 
-    return (
+    const total = useSelector(store => store.total);
 
-        <Button variant="contained" size="xl" endIcon={<ShoppingCart/>}></Button>
+    return (
+        <Button variant="contained" size="xl" endIcon={<ShoppingCart/>}>${total}</Button>
     )
 }
 
