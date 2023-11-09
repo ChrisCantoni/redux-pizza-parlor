@@ -1,21 +1,31 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import Cart from '../Cart/Cart';
 import SelectPizza from '../SelectPizza/SelectPizza';
+// import CustomerForm from '../CustomerForm/CustomerForm';
+import Checkout from '../Checkout/Checkout';
 
 function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-    
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
-      <SelectPizza/>
+      <Header/>
+        <Router>
+          <nav>
+            <ul>
+              <li><Link to='/'>Select</Link></li>
+              <li><Link to='/info'>Customer Form</Link></li>
+              <li><Link to='/checkout'>Checkout</Link></li>
+            </ul>
+          </nav>
+          <Route exact path='/'><SelectPizza/></Route>
+          {/* <Route exact path='/info'><CustomerForm/></Route> */}
+          <Route exact path='/checkout'><Checkout/></Route>
+        </Router>
+      <br></br>
       <Footer />
     </div>
   );
