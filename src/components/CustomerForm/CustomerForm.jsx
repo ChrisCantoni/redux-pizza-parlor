@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useDispatch} from 'react-redux'
-
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import '../CustomerForm/CustomerForm.css';
 function CustomerForm() {
     const [customer, setCustomer] = useState('');
     const [streetAddress, setStreetAddress] = useState('');
@@ -31,26 +33,27 @@ const handleSubmit = (e) => {
         setZip('');
     }
     return(
-        <div>
+        <body>
 <form onSubmit={handleSubmit}>
-            <input onChange={(event) => setCustomer(event.target.value)} 
+            <TextField onChange={(event) => setCustomer(event.target.value)} 
                     placeholder="Name"
                     value={customer} />
-
-            <input onChange={(event) => setStreetAddress(event.target.value)} 
+                  <br/>
+            <TextField onChange={(event) => setStreetAddress(event.target.value)} 
                     placeholder="Street Address"
                     value={streetAddress} />
-
-            <input onChange={(event) => setCity(event.target.value)} 
+                     <br/>
+            <TextField onChange={(event) => setCity(event.target.value)} 
                     placeholder="City"
                     value={city} />
-
-            <input onChange={(event) => setZip(event.target.value)} 
+                     <br/>
+            <TextField onChange={(event) => setZip(event.target.value)} 
                     placeholder="Zip"
                     value={zip} />
-            <button type="submit">Next</button>
+                    <br/>
+            <Button required variant="contained" type="submit">Next</Button>
         </form>
-        </div>
+        </body>
     )
 };
 
