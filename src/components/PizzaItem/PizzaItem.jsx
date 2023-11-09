@@ -5,21 +5,26 @@ import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 const PizzaItem = (props) => {
     const dispatch = useDispatch();
+    const [quantity, setQuantity] = useState(0);
+
     const addPizza = () => {
         console.log("Add pizza", props.pizza.price)
+        setQuantity(1);
         const action = { type: 'ADD_PIZZA', payload: props.pizza};
         dispatch(action);
     }
 
     const removePizza = () => {
         console.log("Remove pizza", props.pizza.price)
+        setQuantity(0);
         const action = { type: 'REMOVE_PIZZA', payload: props.pizza}
         dispatch(action);
     }
-    
+
     return (
         <div className="pizzaCard">
             <Card sx={{ maxWidth: 275 }}>
@@ -39,8 +44,7 @@ const PizzaItem = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <button onClick={addPizza}>Add to Order</button>
-                    <button onClick={removePizza}>Remove from Order</button>
+                    {quantity == 0 ? <button onClick={addPizza}>Add to Order</button> : <button onClick={removePizza}>Remove from Order</button>}
                 </CardActions>
             </Card>
         </div>
