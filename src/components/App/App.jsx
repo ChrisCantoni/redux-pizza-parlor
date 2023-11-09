@@ -6,7 +6,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SelectPizza from '../SelectPizza/SelectPizza';
-// import CustomerForm from '../CustomerForm/CustomerForm';
+import CustomerForm from '../CustomerForm/CustomerForm';
 import Checkout from '../Checkout/Checkout';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
             </ul>
           </nav>
           <Route exact path='/'><SelectPizza/></Route>
-          {/* <Route exact path='/info'><CustomerForm/></Route> */}
+          <Route exact path='/info'><CustomerForm/></Route>
           <Route exact path='/checkout'><Checkout/></Route>
         </Router>
       <br></br>

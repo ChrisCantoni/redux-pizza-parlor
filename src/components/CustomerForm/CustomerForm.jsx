@@ -36,19 +36,18 @@ const handleSubmit = (e) => {
             <input onChange={(event) => setCustomer(event.target.value)} 
                     placeholder="Name"
                     value={customer} />
-            <input type="submit" value="Submit" />
+
             <input onChange={(event) => setStreetAddress(event.target.value)} 
                     placeholder="Street Address"
                     value={streetAddress} />
-            <input type="submit" value="Submit" />
+
             <input onChange={(event) => setCity(event.target.value)} 
                     placeholder="City"
                     value={city} />
-            <input type="submit" value="Submit" />
+
             <input onChange={(event) => setZip(event.target.value)} 
                     placeholder="Zip"
                     value={zip} />
-            <input type="submit" value="Submit" />
             <button type="submit">Next</button>
         </form>
         </div>
