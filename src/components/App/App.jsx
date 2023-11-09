@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-
+import Footer from '../Footer/Footer.jsx';
+import '../Footer/Footer.css'
 function App() {
 
   return (
@@ -15,10 +16,7 @@ function App() {
  
  
  
- 
-  <footer>
-    <h1> Made With Love By 3 Married Men© </h1>
-  </footer>
+ <Footer />
     </div>
   );
 }
