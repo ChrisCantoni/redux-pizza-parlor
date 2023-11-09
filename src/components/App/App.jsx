@@ -16,6 +16,7 @@ function App() {
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
       <SelectPizza/>
+      <Footer />
     </div>
   );
 }
