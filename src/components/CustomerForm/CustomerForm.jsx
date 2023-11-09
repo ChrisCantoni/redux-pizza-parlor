@@ -20,7 +20,7 @@ const dispatch = useDispatch();
 const handleSubmit = (e) => {
     e.preventDefault();
     console.log('customerInfo:', customerInfo);
-    const action = { type: 'CUSTOMER_NAME', payload: customerInfo};
+    const action = { type: 'SET_CUSTOMER', payload: customerInfo};
     dispatch(action);
     clearCustomerFields();
    }
