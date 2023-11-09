@@ -11,13 +11,49 @@ import App from './components/App/App';
 // const pizzaList = (state = [], action) => {
 //     return state;
 // }
-const orders = (state = [], action) => {
+const order = (state = [], action) => {
+    
+    if(action.type === "ADD_PIZZA"){
+        let copy = state;
+        let newPizza = action.payload.pizza;
+        for (let item in copy){
+            if (item.id == newPizza.id){
+                item.quantity += 1;
+                return copy;
+            }
+        }
+        newPizza.quantity = 1;
+        copy.push(newPizza);
+        return copy;
+    }
+    else if(action.type === "REMOVE_PIZZA"){
+        let copy = state;
+        let newPizza = action.payload.pizza;
+        let idx = 0;
+        for (let item in copy){
+            if (item.id == newPizza.id){
+                item.quantity -= 1;
+                if (item.quantity == 0){
+                    copy.splice(idx,1)
+                }
+                return copy;
+            }
+            idx += 1;
+        }
+    }
     return state;
 }
 
 const total = (state = 0.00, action) => {
+    if (action.type === "ADD_PIZZA"){
+        return state + action.payload.price;
+    }
+    else if (action.type === "REMOVE_PIZZA"){
+        return state - action.payload.price;
+    }
     return state;
 }
+
 const customer = (state = {}, action) => {
     if (action.type === "SET_CUSTOMER"){
         return action.payload;
@@ -28,7 +64,7 @@ const customer = (state = {}, action) => {
 const reduxStore = createStore(
     combineReducers({
         // pizzaList,
-        orders,
+        order,
         total,
         customer
     }),
