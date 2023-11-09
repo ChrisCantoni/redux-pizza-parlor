@@ -12,7 +12,13 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-  
+ 
+ 
+ 
+ 
+  <footer>
+    <h1> Made With Love By 3 Married Men© </h1>
+  </footer>
     </div>
   );
 }
