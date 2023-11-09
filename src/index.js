@@ -18,12 +18,19 @@ const orders = (state = [], action) => {
 const total = (state = 0.00, action) => {
     return state;
 }
+const customer = (state = {}, action) => {
+    if (action.type === "SET_CUSTOMER"){
+        return action.payload;
+    }
+    return state;
+}
 
 const reduxStore = createStore(
     combineReducers({
         // pizzaList,
         orders,
-        total
+        total,
+        customer
     }),
     applyMiddleware(logger)
 )
