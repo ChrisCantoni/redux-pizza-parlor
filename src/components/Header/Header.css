@@ -1,0 +1,25 @@
+#header-div {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: darkgray;
+    color: black;
+    margin: 10px;
+}
+
+#title {
+    text-decoration: underline;
+    grid-area: 1/1/2/4;
+    padding: 5px;
+    text-align: left;
+}
+
+#subtitle {
+    grid-area: 2/1/3/4;
+    text-align: left;
+    padding: 5px;
+}
+
+#Cart {
+    grid-area: 0/6/2/8;
+}
