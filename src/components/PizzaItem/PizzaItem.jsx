@@ -4,9 +4,22 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useSelector, useDispatch } from 'react-redux';
 
 const PizzaItem = (props) => {
+    const dispatch = useDispatch();
+    const addPizza = () => {
+        console.log("Add pizza", props.pizza.price)
+        const action = { type: 'ADD_PIZZA', payload: props.pizza};
+        dispatch(action);
+    }
 
+    const removePizza = () => {
+        console.log("Remove pizza", props.pizza.price)
+        const action = { type: 'REMOVE_PIZZA', payload: props.pizza}
+        dispatch(action);
+    }
+    
     return (
         <div className="pizzaCard">
             <Card sx={{ maxWidth: 275 }}>
@@ -26,8 +39,8 @@ const PizzaItem = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <button>Add to Order</button>
-                    <button>Remove from Order</button>
+                    <button onClick={addPizza}>Add to Order</button>
+                    <button onClick={removePizza}>Remove from Order</button>
                 </CardActions>
             </Card>
         </div>
