@@ -6,7 +6,7 @@ function Header () {
     return(
         <div id='header-div'>
             <h1 id='title'>Prime Pizza</h1>
-            <Cart id='Cart'/>
+            <Cart />
             <h6 id='subtitle'>Pizza is our PRIME directive...</h6>
         </div>
     )

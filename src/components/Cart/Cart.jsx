@@ -7,7 +7,7 @@ const Cart = () => {
     const total = useSelector(store => store.total);
 
     return (
-        <Button variant="contained" size="xl" endIcon={<ShoppingCart/>}>${total}</Button>
+        <Button id="Cart" variant="contained" size="xl" endIcon={<ShoppingCart id="cart-icon"/>}>${total}</Button>
     )
 }
 

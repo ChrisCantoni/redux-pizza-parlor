@@ -21,6 +21,11 @@
 }
 
 #Cart {
-    grid-area: 0/7/2/10;
-    align-items: right;
+    grid-area: 1/7/3/9;
+    align-content: right;
+    font-size:4ch;
+}
+
+#cart-icon {
+    transform: scale(1.5);
 }
