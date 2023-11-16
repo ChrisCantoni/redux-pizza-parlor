@@ -11,7 +11,6 @@ import Checkout from '../Checkout/Checkout';
 import Admin from '../Admin/Admin';
 import { useSelector, useDispatch } from 'react-redux';
 
-
 function App() {
   const totalOrders = useSelector(store => store.totalOrders);
   const dispatch = useDispatch();

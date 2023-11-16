@@ -2,8 +2,8 @@
     display:grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    background-color: darkgray;
-    color: black;
+    background-color: #003049;
+    color: white;
     margin: 10px;
 }
 
@@ -24,8 +24,10 @@
     grid-area: 1/7/3/9;
     align-content: right;
     font-size:4ch;
+    background-color: #F77F00;
 }
 
 #cart-icon {
+    color: white;
     transform: scale(1.5);
 }

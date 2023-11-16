@@ -27,7 +27,7 @@ const PizzaItem = (props) => {
 
     return (
         <div className="pizzaCard">
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ backgroundColor:"#003049", maxWidth: 300, color: "#FFFFFF", border: "1px solid white" }}>
                 <CardMedia
                     sx={{height: 140}}
                     image="https://1.bp.blogspot.com/-QoPIEmEz9zY/YDkuGiH3iaI/AAAAAAAACEY/5h5B9AoRCt4hFho--NFEnQpsD5j0CtlogCLcBGAsYHQ/s1100/pizza.png"
@@ -44,7 +44,7 @@ const PizzaItem = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    {quantity == 0 ? <button onClick={addPizza}>Add to Order</button> : <button onClick={removePizza}>Remove from Order</button>}
+                    {quantity == 0 ? <button className="add-btn" onClick={addPizza}>Add to Order</button> : <button className="remove-btn" onClick={removePizza}>Remove from Order</button>}
                 </CardActions>
             </Card>
         </div>
