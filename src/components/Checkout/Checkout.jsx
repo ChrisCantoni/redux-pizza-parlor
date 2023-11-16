@@ -1,9 +1,13 @@
 import React from 'react';
 import './Checkout.css';
 import axios from 'axios';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function Checkout(){
+
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     // order, total, customer is everything we need for checkout
     const order = useSelector(store => store.order);
@@ -31,16 +35,16 @@ function Checkout(){
     function handleSubmit() {
         axios.post('/api/order', postdata).then((response) => {
             console.log('POST order successful')
+            // Clear Reducers
+            const action = {type: 'CHECKOUT'}
+            dispatch(action);
+            // Send user to Select Pizza page
+            history.push('/');
         }).catch((error) => {
             console.error('POST order failed', error);
             alert('Something went wrong!');
         })
     }
-
-
-    // Clear Reducers
-
-    // Send user to Select Pizza page
 
     return(
         <div>
@@ -60,9 +64,11 @@ function Checkout(){
                 </thead>
                 {order.map((pizza) => {
                     return  <tbody>
+                                <tr>
                                 <td>{pizza.name}</td>  
                                 <td>{pizza.price}</td> 
                                 <td>{pizza.quantity}</td>
+                                </tr>
                             </tbody>
                 })}
             </table>
