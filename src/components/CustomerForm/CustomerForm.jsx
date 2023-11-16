@@ -12,8 +12,8 @@ function CustomerForm() {
     const [zip, setZip] = useState('');
     
     const customerInfo = {
-        customer: customer,
-        streetAddress: streetAddress,
+        customer_name: customer,
+        street_address: streetAddress,
         city: city,
         zip: zip
       };
@@ -34,25 +34,25 @@ const handleSubmit = (e) => {
     }
     return(
         <body>
-<form onSubmit={handleSubmit}>
-            <TextField onChange={(event) => setCustomer(event.target.value)} 
-                    placeholder="Name"
-                    value={customer} />
-                  <br/>
-            <TextField onChange={(event) => setStreetAddress(event.target.value)} 
-                    placeholder="Street Address"
-                    value={streetAddress} />
-                     <br/>
-            <TextField onChange={(event) => setCity(event.target.value)} 
-                    placeholder="City"
-                    value={city} />
-                     <br/>
-            <TextField onChange={(event) => setZip(event.target.value)} 
-                    placeholder="Zip"
-                    value={zip} />
-                    <br/>
-            <Button required variant="contained" type="submit">Next</Button>
-        </form>
+        <form onSubmit={handleSubmit}>
+                    <TextField onChange={(event) => setCustomer(event.target.value)} 
+                            placeholder="Name"
+                            value={customer} />
+                        <br/>
+                    <TextField onChange={(event) => setStreetAddress(event.target.value)} 
+                            placeholder="Street Address"
+                            value={streetAddress} />
+                            <br/>
+                    <TextField onChange={(event) => setCity(event.target.value)} 
+                            placeholder="City"
+                            value={city} />
+                            <br/>
+                    <TextField onChange={(event) => setZip(event.target.value)} 
+                            placeholder="Zip"
+                            value={zip} />
+                            <br/>
+                    <Button required variant="contained" type="submit">Next</Button>
+                </form>
         </body>
     )
 };

@@ -13,18 +13,19 @@ import App from './components/App/App';
 // }
 const order = (state = [], action) => {
     
-    if(action.type === "ADD_PIZZA"){
-        let copy = state;
-        let newPizza = action.payload.pizza;
-        for (let item in copy){
-            if (item.id == newPizza.id){
-                item.quantity += 1;
-                return copy;
-            }
-        }
-        newPizza.quantity = 1;
-        copy.push(newPizza);
-        return copy;
+    if (action.type === "ADD_PIZZA"){
+        // let copy = state;
+        console.log(action.payload)
+        // let newPizza = action.payload.pizza;
+        // for (let item in copy){
+        //     if (item.id == newPizza.id){
+        //         item.quantity += 1;
+        //         return copy;
+        //     }
+        // }
+        action.payload.quantity = 1;
+        
+        return [...state, action.payload];
     }
     else if(action.type === "REMOVE_PIZZA"){
         let copy = state;
@@ -46,10 +47,10 @@ const order = (state = [], action) => {
 
 const total = (state = 0.00, action) => {
     if (action.type === "ADD_PIZZA"){
-        return state + action.payload.price;
+        return state + Number(action.payload.price);
     }
     else if (action.type === "REMOVE_PIZZA"){
-        return state - action.payload.price;
+        return state - Number(action.payload.price);
     }
     return state;
 }
