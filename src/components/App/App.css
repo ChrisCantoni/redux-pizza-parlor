@@ -15,7 +15,7 @@
 }
 
 .pizzaDisplay {
-  background-color:rgb(214, 66, 66);
+  background-color:#FCBF49;
   display: flex;
   flex-wrap: wrap;
 
@@ -23,7 +23,14 @@
 
 .pizzaCard {
   flex-grow: 1;
-  width: 33%;
+  width: 30%;
   height: 500px;
-  margin-top: 10px; 
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.add-btn {
+  margin-right: auto;
+  margin-left: auto;
 }

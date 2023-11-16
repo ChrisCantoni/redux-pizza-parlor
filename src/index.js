@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 
 import './index.css';
 import App from './components/App/App';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // const pizzaList = (state = [], action) => {
 //     return state;
@@ -97,11 +98,33 @@ const reduxStore = createStore(
     applyMiddleware(logger)
 )
 
+const theme = createTheme({
+    pallette: {
+      primary: {
+        main: "#003049"
+      },
+      secondary: {
+        main:"#D62828"
+      },
+      third: {
+        main: "#F77F00"
+      },
+      fourth: {
+        main: "#FCBF49"
+      },
+      fifth: {
+        main: "#EAE2B7"
+      }
+    }
+})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <Provider store={reduxStore}>
-            <App />
+            <ThemeProvider theme={theme}>
+                <App />
+            </ThemeProvider>
         </Provider>
     </React.StrictMode>
 );
