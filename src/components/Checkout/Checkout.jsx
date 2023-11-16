@@ -19,7 +19,7 @@ function Checkout(){
     let city = customer.city;
     let zip = customer.zip;
     let pizzas = order;
-    let type = "Pickup"
+    let type = customer.type;
 
     let postdata = {
         customer_name,
@@ -54,7 +54,7 @@ function Checkout(){
                 <h4>{customer.city} {customer.zip}</h4>
             </div>
             <br/>
-
+            
             <table className="checkoutTable">
                 <thead>
                     <tr>
