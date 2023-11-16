@@ -48,13 +48,14 @@ function Checkout(){
 
     return(
         <div>
-            <h3>{customer.customer_name}</h3>
-            <h4>{customer.street_address}</h4>
-            <h4>{customer.city} {customer.zip}</h4>
-            {JSON.stringify(customer)}
+            <div className="customerInfo">
+                <h3>{customer.customer_name}</h3>
+                <h4>{customer.street_address}</h4>
+                <h4>{customer.city} {customer.zip}</h4>
+            </div>
             <br/>
-            {JSON.stringify(order)}
-            <table>
+
+            <table className="checkoutTable">
                 <thead>
                     <tr>
                         <th>Pizza</th>
