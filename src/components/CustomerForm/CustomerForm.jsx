@@ -48,7 +48,7 @@ const handleSubmit = (e) => {
     
       
     return(
-        <body>
+        <div>
 
 <form onSubmit={handleSubmit}>
             <TextField onChange={(event) => setCustomer(event.target.value)} 
@@ -92,7 +92,7 @@ const handleSubmit = (e) => {
 </FormControl>
     </form>  
 
-        </body>
+        </div>
     )
 };
 
