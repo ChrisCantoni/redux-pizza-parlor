@@ -2,4 +2,19 @@ form {
     margin-right: 85% ;
 }
 
-
+#FormControlLabel {
+    
+    margin-left: 500%;
+    
+}
+#delivery {
+    margin-left: 500%;
+    
+}
+label {
+    margin-left: 0%;
+    margin-top: 0%;
+}
+Formgroup {
+    margin-top: 10%;
+}

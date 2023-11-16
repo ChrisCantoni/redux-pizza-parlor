@@ -1,0 +1,11 @@
+.customerInfo {
+    text-align: left;
+    margin: 10px;
+    padding: 5px;
+}
+
+.checkoutTable, td, th {
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
