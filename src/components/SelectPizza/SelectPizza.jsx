@@ -23,7 +23,7 @@ useEffect(() => {
 
 
     return (
-        <div>
+        <div className="pizzaDisplay">
             
             {pizzaList.map((pizza) => {
                 return <PizzaItem key={pizza.id} pizza={pizza} />

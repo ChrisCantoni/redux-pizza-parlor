@@ -14,3 +14,16 @@
   font-size: 2em;
 }
 
+.pizzaDisplay {
+  background-color:rgb(214, 66, 66);
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.pizzaCard {
+  flex-grow: 1;
+  width: 33%;
+  height: 500px;
+  margin-top: 10px; 
+}
