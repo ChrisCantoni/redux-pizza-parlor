@@ -5,19 +5,29 @@ import { useDispatch} from 'react-redux'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import '../CustomerForm/CustomerForm.css';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 function CustomerForm() {
     const [customer, setCustomer] = useState('');
     const [streetAddress, setStreetAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
-    
+    const [type, setType]= useState('');
     const customerInfo = {
         customer: customer,
         streetAddress: streetAddress,
         city: city,
-        zip: zip
+        zip: zip,
+        type: type
       };
 const dispatch = useDispatch();
+const history = useHistory();
+function handleRadioChange(e) {
+    setType(e.target.value);
+}
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +35,8 @@ const handleSubmit = (e) => {
     const action = { type: 'SET_CUSTOMER', payload: customerInfo};
     dispatch(action);
     clearCustomerFields();
+    history.push('/checkout');
+    
    }
     const clearCustomerFields = () => {
         setCustomer('');
@@ -32,6 +44,9 @@ const handleSubmit = (e) => {
         setCity('');
         setZip('');
     }
+
+    
+      
     return(
         <body>
 <form onSubmit={handleSubmit}>
@@ -52,7 +67,30 @@ const handleSubmit = (e) => {
                     value={zip} />
                     <br/>
             <Button required variant="contained" type="submit">Next</Button>
-        </form>
+        {/* <br></br>
+            <input type="radio" id="pickup" name="pickup" value="Pickup"></input>
+            <label for="pickup">Pickup</label>
+         <br></br>
+            <input type="radio" id="delivery" name="delivery" value="Delivery"></input>
+            <label for="delivery">Delivery</label> */}
+             <br></br>
+             <br></br>
+             <br></br>
+             <FormControl>
+  <FormLabel id="demo-radio-buttons-group-label">Pickup or Delivery</FormLabel>
+  <RadioGroup
+    aria-labelledby="demo-radio-buttons-group-label"
+    defaultValue={type}
+    name="radio-buttons-group"
+
+    onChange={handleRadioChange}
+  >
+    <FormControlLabel  value="pickup" control={<Radio />} label="Pickup" />
+    <FormControlLabel  value="delivery" control={<Radio />} label="Delivery" />
+  </RadioGroup>
+</FormControl>
+    </form>  
+   
         </body>
     )
 };
@@ -79,3 +117,9 @@ export default CustomerForm;
     //         console.log(err);
     //     });
     // };
+
+    // if(order of delivery) = 'delivery'
+    // return( 'delivery' )
+    // console.log(order)
+    // else if (order of delivery) = 'pickup'
+    // return('pickup')
