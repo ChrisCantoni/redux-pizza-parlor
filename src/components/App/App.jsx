@@ -35,8 +35,9 @@ function App() {
 
   return (
     <div className='App'>
+      <Router>
       <Header/>
-        <Router>
+        
           <nav>
             <ul>
               <li><Link to='/'>Select</Link></li>
@@ -49,9 +50,10 @@ function App() {
           <Route exact path='/info'><CustomerForm/></Route>
           <Route exact path='/checkout'><Checkout/></Route>
           <Route exact path='/admin'><Admin/></Route>
-        </Router>
+        
       <br></br>
       <Footer />
+      </Router>
     </div>
   );
 }
