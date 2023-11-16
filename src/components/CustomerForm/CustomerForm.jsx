@@ -17,8 +17,8 @@ function CustomerForm() {
     const [zip, setZip] = useState('');
     const [type, setType]= useState('');
     const customerInfo = {
-        customer: customer,
-        streetAddress: streetAddress,
+        customer_name: customer,
+        street_address: streetAddress,
         city: city,
         zip: zip,
         type: type
@@ -49,6 +49,7 @@ const handleSubmit = (e) => {
       
     return(
         <body>
+
 <form onSubmit={handleSubmit}>
             <TextField onChange={(event) => setCustomer(event.target.value)} 
                     placeholder="Name"
@@ -90,7 +91,7 @@ const handleSubmit = (e) => {
   </RadioGroup>
 </FormControl>
     </form>  
-   
+
         </body>
     )
 };
