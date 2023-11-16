@@ -27,7 +27,7 @@ const PizzaItem = (props) => {
 
     return (
         <div className="pizzaCard">
-            <Card sx={{ maxWidth: 275 }}>
+            <Card sx={{ maxWidth: 300 }}>
                 <CardMedia
                     sx={{height: 140}}
                     image="https://1.bp.blogspot.com/-QoPIEmEz9zY/YDkuGiH3iaI/AAAAAAAACEY/5h5B9AoRCt4hFho--NFEnQpsD5j0CtlogCLcBGAsYHQ/s1100/pizza.png"
