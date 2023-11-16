@@ -1,0 +1,23 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 3px solid black;
+    width: 90vw;
+}
+
+tr {
+    height: 4ch;
+}
+
+th, td {
+    border: 2px solid black;
+}
+
+thead {
+    background-color: darkgray;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}

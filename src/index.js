@@ -42,21 +42,45 @@ const order = (state = [], action) => {
             idx += 1;
         }
     }
+    else if(action.type === "CHECKOUT"){
+        return [];
+    }
     return state;
 }
 
-const total = (state = 0.00, action) => {
+const total = (state = "0.00", action) => {
     if (action.type === "ADD_PIZZA"){
-        return state + Number(action.payload.price);
+        return Math.round((Number(state) + Number(action.payload.price))*100)/100;
     }
     else if (action.type === "REMOVE_PIZZA"){
-        return state - Number(action.payload.price);
+        return Math.round((Number(state) - Number(action.payload.price))*100)/100;
+    }
+    else if (action.type === "CHECKOUT"){
+        return 0.00;
     }
     return state;
 }
 
 const customer = (state = {}, action) => {
     if (action.type === "SET_CUSTOMER"){
+        return action.payload;
+    }
+    else if (action.type === "CHECKOUT"){
+        return {};
+    }
+    return state;
+}
+
+const totalOrders = (state = [], action) =>{
+    if (action.type === "GET_ORDERS"){
+        let retArray = [];
+        for (let order of action.payload){
+            let tempTime = order.time;
+            tempTime = tempTime.replace('T',' ');
+            tempTime = tempTime.substring(0,19);
+            console.log(tempTime);
+            order.time = tempTime;
+        }
         return action.payload;
     }
     return state;
@@ -67,7 +91,8 @@ const reduxStore = createStore(
         // pizzaList,
         order,
         total,
-        customer
+        customer,
+        totalOrders
     }),
     applyMiddleware(logger)
 )
