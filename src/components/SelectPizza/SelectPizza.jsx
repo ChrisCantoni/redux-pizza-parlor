@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PizzaItem from '../PizzaItem/PizzaItem';
+import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 
 const SelectPizza = () => {
 
@@ -23,11 +25,14 @@ useEffect(() => {
 
 
     return (
-        <div className="pizzaDisplay">
+        <div>
+            <Button variant="contained" component={Link} to="/info">Next</Button>
+            <div className="pizzaDisplay">
             
             {pizzaList.map((pizza) => {
                 return <PizzaItem key={pizza.id} pizza={pizza} />
             })}
+            </div>
         </div>
     )
 }
