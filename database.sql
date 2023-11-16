@@ -32,3 +32,8 @@ CREATE TABLE "line_item" (
 	"pizza_id" INT REFERENCES "pizza",
 	"quantity" INT NOT NULL
 );
+
+INSERT INTO "orders" ("customer_name", "street_address", "city", "zip", "type", "total")
+        VALUES ('J Read', '0001 Cemetery Lane', 'Bloomington', '55425', 'Pickup', 69.69),
+        ('Chris Cantoni', '1313 Mockingbird Lane', 'Paradise City', '90210', 'Delivery', 420.69),
+        ('Zach Andrade', '1060 West Addison St.', 'Chicago','60613','Delivery',800.85);
