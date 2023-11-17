@@ -34,3 +34,13 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiCardActions-root{
+  margin-top: auto;
+  justify-content: center;
+}
