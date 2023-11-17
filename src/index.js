@@ -15,33 +15,14 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 const order = (state = [], action) => {
     
     if (action.type === "ADD_PIZZA"){
-        // let copy = state;
         console.log(action.payload)
-        // let newPizza = action.payload.pizza;
-        // for (let item in copy){
-        //     if (item.id == newPizza.id){
-        //         item.quantity += 1;
-        //         return copy;
-        //     }
-        // }
         action.payload.quantity = 1;
         
         return [...state, action.payload];
     }
     else if(action.type === "REMOVE_PIZZA"){
-        let copy = state;
-        let newPizza = action.payload.pizza;
-        let idx = 0;
-        for (let item in copy){
-            if (item.id == newPizza.id){
-                item.quantity -= 1;
-                if (item.quantity == 0){
-                    copy.splice(idx,1)
-                }
-                return copy;
-            }
-            idx += 1;
-        }
+        action.payload.quantity = 0;
+        return [...state, action.payload];
     }
     else if(action.type === "CHECKOUT"){
         return [];
