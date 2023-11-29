@@ -51,6 +51,10 @@ const handleSubmit = (e) => {
         <div>
 
 <form onSubmit={handleSubmit}>
+
+<br></br>
+             <br></br>
+             <br></br>
             <TextField onChange={(event) => setCustomer(event.target.value)} 
                     placeholder="Name"
                     value={customer} />
@@ -74,10 +78,11 @@ const handleSubmit = (e) => {
          <br></br>
             <input type="radio" id="delivery" name="delivery" value="Delivery"></input>
             <label for="delivery">Delivery</label> */}
-             <br></br>
-             <br></br>
-             <br></br>
-             <FormControl>
+             
+            
+    </form>  
+        <div id="radio">
+        <FormControl>
   <FormLabel id="demo-radio-buttons-group-label">Pickup or Delivery</FormLabel>
   <RadioGroup
     aria-labelledby="demo-radio-buttons-group-label"
@@ -86,12 +91,11 @@ const handleSubmit = (e) => {
 
     onChange={handleRadioChange}
   >
-    <FormControlLabel  value="pickup" control={<Radio />} label="Pickup" />
-    <FormControlLabel  value="delivery" control={<Radio />} label="Delivery" />
+    <FormControlLabel  id="pickup-order" value="pickup" control={<Radio />} label="Pickup" />
+    <FormControlLabel  id="delivery-order" value="delivery" control={<Radio />} label="Delivery" />
   </RadioGroup>
 </FormControl>
-    </form>  
-
+</div>
         </div>
     )
 };
