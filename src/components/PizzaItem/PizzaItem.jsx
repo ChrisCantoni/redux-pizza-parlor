@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 const PizzaItem = (props) => {
@@ -12,14 +12,12 @@ const PizzaItem = (props) => {
     const [quantity, setQuantity] = useState(0);
 
     const addPizza = () => {
-        console.log("Add pizza", props.pizza.price)
         setQuantity(1);
         const action = { type: 'ADD_PIZZA', payload: props.pizza};
         dispatch(action);
     }
 
     const removePizza = () => {
-        console.log("Remove pizza", props.pizza.price)
         setQuantity(0);
         const action = { type: 'REMOVE_PIZZA', payload: props.pizza}
         dispatch(action);
@@ -44,7 +42,21 @@ const PizzaItem = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions className="pizzaButton">
-                    {quantity == 0 ? <Button variant="contained" className="add-btn" onClick={addPizza}>Add to Order</Button> : <Button variant="contained" sx={{backgroundColor:"red", ":hover": {backgroundColor: 'darkred'}}} className="remove-btn" onClick={removePizza}>Remove from Order</Button>}
+                    {quantity == 0 ? 
+                        <Button 
+                            variant="contained" 
+                            className="add-btn"
+                            onClick={addPizza}>   
+                            Add to Order
+                        </Button> 
+                        : 
+                        <Button
+                            variant="contained"
+                            sx={{backgroundColor:"red", ":hover": {backgroundColor: 'darkred'}}}
+                            className="remove-btn" onClick={removePizza}>
+                            Remove from Order
+                        </Button>
+                    }
                 </CardActions>
             </Card>
         </div>

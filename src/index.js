@@ -12,9 +12,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 const order = (state = [], action) => {
     
     if (action.type === "ADD_PIZZA"){
-        console.log(action.payload)
         action.payload.quantity = 1;
-        
         return [...state, action.payload];
     }
     else if(action.type === "REMOVE_PIZZA"){
@@ -32,10 +30,15 @@ const total = (state = "0.00", action) => {
         return Math.round((Number(state) + Number(action.payload.price))*100)/100;
     }
     else if (action.type === "REMOVE_PIZZA"){
-        return Math.round((Number(state) - Number(action.payload.price))*100)/100;
+        if (Math.round((Number(state) - Number(action.payload.price))*100)/100 == 0){
+            return "0.00"
+        }
+        else {
+            return Math.round((Number(state) - Number(action.payload.price))*100)/100;
+        }
     }
     else if (action.type === "CHECKOUT"){
-        return 0.00;
+        return "0.00";
     }
     return state;
 }
@@ -57,7 +60,6 @@ const totalOrders = (state = [], action) =>{
             let tempTime = order.time;
             tempTime = tempTime.replace('T',' ');
             tempTime = tempTime.substring(0,19);
-            console.log(tempTime);
             order.time = tempTime;
         }
         return action.payload;

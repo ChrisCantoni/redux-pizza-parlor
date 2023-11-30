@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useDispatch} from 'react-redux'
 import Button from '@mui/material/Button';
@@ -29,7 +28,7 @@ function CustomerForm() {
   const history = useHistory();
 
   function handleRadioChange(e) {
-      setType(e.target.value);
+    setType(e.target.value);
   }
 
   const handleSubmit = (e) => {
@@ -41,7 +40,6 @@ function CustomerForm() {
         text: "You have to select how to get your pizza!"
       });
     } else {
-    console.log('customerInfo:', customerInfo);
     const action = { type: 'SET_CUSTOMER', payload: customerInfo};
     dispatch(action);
     clearCustomerFields();

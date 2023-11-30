@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PizzaItem from '../PizzaItem/PizzaItem';
-import Button from '@mui/material/Button';
-import {Link} from 'react-router-dom';
 
 const SelectPizza = () => {
 
@@ -10,7 +8,6 @@ const SelectPizza = () => {
 
     const getPizzaList = () => {
         axios.get('/api/pizza').then((response) => {
-            console.log(response.data);
             setPizzaList(response.data)
         }).catch((error) => {
             console.log('GET /pizza error', error);

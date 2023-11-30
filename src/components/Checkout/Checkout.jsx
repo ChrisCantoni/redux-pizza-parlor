@@ -35,7 +35,6 @@ function Checkout(){
     // POST order to server
     function handleSubmit() {
         axios.post('/api/order', postdata).then((response) => {
-            console.log('POST order successful')
             // Clear Reducers
             const action = {type: 'CHECKOUT'}
             dispatch(action);
@@ -49,8 +48,8 @@ function Checkout(){
 
     return(
         <div>
-            <div className="customerInfo">
-                <h2>Customer Info:</h2>
+            <div id="customerInfo">
+                <h2 id="customer-info-title">Customer Info:</h2>
                 <h3>{customer.customer_name}</h3>
                 <h4>{customer.street_address}</h4>
                 <h4>{customer.city} {customer.zip}</h4>
@@ -75,7 +74,7 @@ function Checkout(){
                             </tbody>
                 })}
             </table>
-            <h3>Total: {total}</h3>
+            <h3>Total: ${total}</h3>
             <Button variant="contained" onClick={handleSubmit}>Checkout</Button>
         </div>
     )

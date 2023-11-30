@@ -1,7 +1,7 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -17,7 +17,6 @@ function App() {
 
   const getOrders = () =>{
     axios.get('/API/order').then((response) => {
-      console.log(response.data);
       dispatch({
         type: "GET_ORDERS",
         payload: response.data
@@ -36,14 +35,12 @@ function App() {
   return (
     <div className='App'>
       <Router>
-      <Header/>
+        <Header/>
           <Route exact path='/'><SelectPizza/></Route>
           <Route exact path='/info'><CustomerForm/></Route>
           <Route exact path='/checkout'><Checkout/></Route>
           <Route exact path='/admin'><Admin/></Route>
-        
-      <br></br>
-      <Footer />
+        <Footer />
       </Router>
     </div>
   );
