@@ -1,12 +1,15 @@
 form {
     margin-left:5%;
     text-align: left;
+    display: inline-block;
+    float: left;
+    margin-top: -48px;
 }
 
 #radio{
-    margin-top: -20%;
+    display: inline-flex;
+    float: right;
     margin-right: 5%;
-text-align: right;
 }
 
 
