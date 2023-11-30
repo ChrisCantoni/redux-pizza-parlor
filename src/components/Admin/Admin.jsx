@@ -6,11 +6,11 @@ function Admin(){
     const totalOrders = useSelector(store => store.totalOrders);
     
     return(
-        <>
+        <>  <h2>Current Orders:</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th><th>Name</th><th>Time Placed</th><th>Type</th><th>Total</th>
+                        <th>ID</th><th>Name</th><th>Time Placed</th><th>Type</th><th>Total</th>
                     </tr>
                 </thead>
                 <tbody>

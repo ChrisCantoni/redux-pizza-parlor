@@ -9,9 +9,6 @@ import './index.css';
 import App from './components/App/App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-// const pizzaList = (state = [], action) => {
-//     return state;
-// }
 const order = (state = [], action) => {
     
     if (action.type === "ADD_PIZZA"){
@@ -100,6 +97,7 @@ const theme = createTheme({
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <React.StrictMode>
         <Provider store={reduxStore}>

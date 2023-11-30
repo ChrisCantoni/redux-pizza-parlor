@@ -3,6 +3,7 @@ import './Checkout.css';
 import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function Checkout(){
 
@@ -49,6 +50,7 @@ function Checkout(){
     return(
         <div>
             <div className="customerInfo">
+                <h2>Customer Info:</h2>
                 <h3>{customer.customer_name}</h3>
                 <h4>{customer.street_address}</h4>
                 <h4>{customer.city} {customer.zip}</h4>
@@ -74,7 +76,7 @@ function Checkout(){
                 })}
             </table>
             <h3>Total: {total}</h3>
-            <button onClick={handleSubmit}>Checkout</button>
+            <Button variant="contained" onClick={handleSubmit}>Checkout</Button>
         </div>
     )
 }

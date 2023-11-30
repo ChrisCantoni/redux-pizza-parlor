@@ -1,11 +1,20 @@
 .customerInfo {
-    text-align: left;
-    margin: 10px;
+    max-width:fit-content;
+    min-width: 400px;
+   background-color: #003049;
+   color: white;
+    margin: auto;
     padding: 5px;
+    border: 2px solid white;
 }
 
 .checkoutTable, td, th {
     margin: auto;
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+h2 {
+    color: #FCBF49;
+    text-decoration: underline;
 }

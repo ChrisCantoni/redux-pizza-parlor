@@ -17,7 +17,8 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "^5.0.1",
     "redux": "^4.1.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"

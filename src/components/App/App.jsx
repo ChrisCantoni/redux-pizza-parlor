@@ -37,15 +37,6 @@ function App() {
     <div className='App'>
       <Router>
       <Header/>
-        
-          <nav>
-            <ul>
-              <li><Link to='/'>Select</Link></li>
-              <li><Link to='/info'>Customer Form</Link></li>
-              <li><Link to='/checkout'>Checkout</Link></li>
-              <li><Link to='/admin'>Admin</Link></li>
-            </ul>
-          </nav>
           <Route exact path='/'><SelectPizza/></Route>
           <Route exact path='/info'><CustomerForm/></Route>
           <Route exact path='/checkout'><Checkout/></Route>

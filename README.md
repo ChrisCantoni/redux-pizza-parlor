@@ -113,9 +113,41 @@ This page **should not** appear in the navigation bar. Eventually the client wou
 
 ## STRETCH GOALS
 
-- Improve the styling of the app using Material-UI cards, buttons, nav bar and icons.
-- Allow the user to go back to previous pages (until they've completed checkout).
-- Display a list of pizzas for each order on the orders page.
-- Add pictures to the `public/images` folder and update the image url for each pizza in the database.
+- [x] Improve the styling of the app using Material-UI cards, buttons, nav bar and icons.
+- [x] Allow the user to go back to previous pages (until they've completed checkout).
+- [x] Display a list of pizzas for each order on the orders page.
+- [x] Add pictures to the `public/images` folder and update the image url for each pizza in the database.
 - Add a button on the orders page to track delivery status.
 - Allow admins to click on an order and see all of the details for that order (which pizzas were a part of that particular order). For the details of the order with `id` of `1`, it will be available to anyone with the url [http://localhost:3000/order/1](http://localhost:3000/order/1). This route is not built on the server, so you will need to create it.
+
+
+### Steps taken:
+### Base Goals
+- [x] Order - Select Pizza
+	- [x] Display all pizza options
+	- [x] Allow user to add and/or remove pizzas for their order
+	- [x] Only allow ONE of each pizza in cart
+	- [x] `NEXT` button takes user to Order Details page
+- [x] Order - Enter Customer Information
+	- [x] Collect user inputs - `name, street address, city, zip`
+	- [x] Select `pickup` or `delivery`
+- [x] Order - Checkout
+	- [x] Item totals cannot be modified by user
+	- [x] OnClick `checkout` user info, order total and array are sent to server
+		- [x] After `checkout` user should be sent to `Select Pizza` page
+		- [x] Clear out `Reducer` as appropriate, clean order data
+- [x] Admin - Orders
+	- [x] Page should not be part of navigation. 
+	- [x] Must navigate to `http://localhost:3000/admin`
+	- [x] Display name, time and order total for EACH order
+
+
+
+### Stretch Goals
+- [x] Improve styling of app using Material-UI
+- [x] Allow user to go back to previous pages (until they've completed checkout)
+- [ ] Display list of pizza for each order on order page
+- [x] Add pictures to `public/images` folder and update the image URL for each in the database
+	- [x] Add pictures
+- [ ] Add a button on the orders page to track delivery status
+- [ ] Allow admins to click on an order and see all the details of that order.

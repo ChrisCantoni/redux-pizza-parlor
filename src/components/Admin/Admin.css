@@ -21,3 +21,13 @@ thead {
 tr:nth-child(even) {
     background-color: lightgray;
 }
+
+h2 {
+    background-color: #003049;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}

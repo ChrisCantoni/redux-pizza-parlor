@@ -9,25 +9,43 @@
 
 #title {
     text-decoration: underline;
-    grid-area: 1/1/2/4;
+    grid-area: 1/3/2/7;
     padding: 5px;
-    text-align: left;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 5px;
+    
 }
 
 #subtitle {
-    grid-area: 2/1/3/4;
-    text-align: left;
+    grid-area: 2/3/3/7;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.2rem;
     padding: 5px;
+    margin-left: 5px;
 }
 
 #Cart {
-    grid-area: 1/7/3/9;
+    grid-area: 1/7/2/9;
     align-content: right;
     font-size:4ch;
     background-color: #F77F00;
+    margin: 3px;
+    border: 1px solid white;
 }
 
 #cart-icon {
     color: white;
     transform: scale(1.5);
+}
+
+#logo {
+    grid-area: 1/1/3/3;
+    width: 170px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 3px solid #F77F00
 }
